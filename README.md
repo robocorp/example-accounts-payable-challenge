@@ -1,5 +1,7 @@
 # A robot that completes the accounts payable challenge
 
+<img src="images/invoicing-web-app.png" style="margin-bottom:20px">
+
 This example robot completes the accounts payable challenge at https://developer.automationanywhere.com/challenges/automationanywherelabs-invoiceentry.html.
 
 The challenge involves reading invoice images programmatically and entering the data into a web application.
