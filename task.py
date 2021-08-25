@@ -26,11 +26,20 @@ def complete_accounts_payable_challenge():
 
 
 def open_integrated_invoicing_solution(url):
-    browser_lib.open_available_browser(url)
+    browser_lib.open_chrome_browser("about:blank")
+    override_user_agent("Chrome/92.0.4515.159")
+    browser_lib.go_to(url)
+
+
+def override_user_agent(user_agent):
+    parameters = {"userAgent": user_agent}
+    browser_lib.execute_cdp("Network.setUserAgentOverride", parameters)
 
 
 def get_invoices_zip_url():
-    return browser_lib.get_element_attribute("css:p.lead a", "href")
+    locator = "css:p.lead a"
+    browser_lib.wait_until_element_is_visible(locator)
+    return browser_lib.get_element_attribute(locator, "href")
 
 
 def download_invoices(url, target_file):
