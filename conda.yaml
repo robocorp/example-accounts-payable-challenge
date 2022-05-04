@@ -5,4 +5,5 @@ dependencies:
   - python=3.7.5
   - pip=20.1
   - pip:
-      - rpaframework[aws]==13.0.3
+      - rpaframework==14.0.0
+      - rpaframework-aws==2.0.0
